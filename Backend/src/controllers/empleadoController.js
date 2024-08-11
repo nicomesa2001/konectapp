@@ -44,11 +44,22 @@ exports.updateEmpleado = async (req, res, next) => {
 
         const empleado = await prismaClient.empleado.update({
             where: { id: parseInt(id) },
-            data: { fechaIngreso: new Date(fechaIngreso), nombre, salario },
+            data: {
+                fechaIngreso: fechaIngreso ? new Date(fechaIngreso) : undefined,
+                nombre,
+                salario
+            },
         });
+
+        if (!empleado) {
+            return res.status(404).json({ message: 'Empleado no encontrado' });
+        }
 
         res.json(empleado);
     } catch (error) {
+        if (error.code === 'P2025') {
+            return res.status(404).json({ message: 'Empleado no encontrado' });
+        }
         next(error);
     }
 };

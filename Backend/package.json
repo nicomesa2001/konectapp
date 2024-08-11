@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "dev": "node src/index.js"
+    "dev": "node src/index.js",
+    "test": "jest"
   },
   "dependencies": {
     "@prisma/client": "^5.18.0",
