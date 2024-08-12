@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "dev": "node src/index.js",
+    "dev": "npx prisma generate && node src/index.js",
     "test": "jest"
   },
   "dependencies": {

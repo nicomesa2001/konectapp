@@ -23,7 +23,7 @@
                             }
                         },
                         "url": {
-                            "raw": "http://localhost:3000/auth/register",
+                            "raw": "http://localhost:4000/auth/register",
                             "protocol": "http",
                             "host": [
                                 "localhost"
@@ -52,7 +52,7 @@
                             }
                         },
                         "url": {
-                            "raw": "http://localhost:3000/auth/login",
+                            "raw": "http://localhost:4000/auth/login",
                             "protocol": "http",
                             "host": [
                                 "localhost"
@@ -83,7 +83,7 @@
                             }
                         ],
                         "url": {
-                            "raw": "http://localhost:3000/empleados?page=1&limit=10&nombre=Juan&salarioMin=2000&salarioMax=3000",
+                            "raw": "http://localhost:4000/empleados?page=1&limit=10&nombre=Juan&salarioMin=2000&salarioMax=4000",
                             "protocol": "http",
                             "host": [
                                 "localhost"
@@ -111,34 +111,8 @@
                                 },
                                 {
                                     "key": "salarioMax",
-                                    "value": "3000"
+                                    "value": "4000"
                                 }
-                            ]
-                        }
-                    },
-                    "response": []
-                },
-                {
-                    "name": "Get Empleado by ID",
-                    "request": {
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Authorization",
-                                "value": "Bearer {{token}}",
-                                "type": "text"
-                            }
-                        ],
-                        "url": {
-                            "raw": "http://localhost:3000/empleados/1",
-                            "protocol": "http",
-                            "host": [
-                                "localhost"
-                            ],
-                            "port": "4000",
-                            "path": [
-                                "empleados",
-                                "1"
                             ]
                         }
                     },
@@ -165,7 +139,7 @@
                             }
                         },
                         "url": {
-                            "raw": "http://localhost:3000/empleados",
+                            "raw": "http://localhost:4000/empleados",
                             "protocol": "http",
                             "host": [
                                 "localhost"
@@ -191,7 +165,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"fechaIngreso\": \"2024-08-10\",\n    \"nombre\": \"Juan Perez Modificado\",\n    \"salario\": 3000.50\n}",
+                            "raw": "{\n    \"fechaIngreso\": \"2024-08-10\",\n    \"nombre\": \"Juan Perez Modificado\",\n    \"salario\": 4000.50\n}",
                             "options": {
                                 "raw": {
                                     "language": "json"
@@ -199,7 +173,7 @@
                             }
                         },
                         "url": {
-                            "raw": "http://localhost:3000/empleados/1",
+                            "raw": "http://localhost:4000/empleados/1",
                             "protocol": "http",
                             "host": [
                                 "localhost"
@@ -225,7 +199,7 @@
                             }
                         ],
                         "url": {
-                            "raw": "http://localhost:3000/empleados/1",
+                            "raw": "http://localhost:4000/empleados/1",
                             "protocol": "http",
                             "host": [
                                 "localhost"
@@ -256,7 +230,7 @@
                             }
                         ],
                         "url": {
-                            "raw": "http://localhost:3000/solicitudes?page=1&limit=10&codigo=SOL&descripcion=ejemplo",
+                            "raw": "http://localhost:4000/solicitudes?page=1&limit=10&codigo=SOL&descripcion=ejemplo",
                             "protocol": "http",
                             "host": [
                                 "localhost"
@@ -288,32 +262,6 @@
                     "response": []
                 },
                 {
-                    "name": "Get Solicitud by ID",
-                    "request": {
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Authorization",
-                                "value": "Bearer {{token}}",
-                                "type": "text"
-                            }
-                        ],
-                        "url": {
-                            "raw": "http://localhost:3000/solicitudes/1",
-                            "protocol": "http",
-                            "host": [
-                                "localhost"
-                            ],
-                            "port": "4000",
-                            "path": [
-                                "solicitudes",
-                                "1"
-                            ]
-                        }
-                    },
-                    "response": []
-                },
-                {
                     "name": "Create Solicitud",
                     "request": {
                         "method": "POST",
@@ -334,7 +282,7 @@
                             }
                         },
                         "url": {
-                            "raw": "http://localhost:3000/solicitudes",
+                            "raw": "http://localhost:4000/solicitudes",
                             "protocol": "http",
                             "host": [
                                 "localhost"
@@ -368,7 +316,7 @@
                             }
                         },
                         "url": {
-                            "raw": "http://localhost:3000/solicitudes/1",
+                            "raw": "http://localhost:4000/solicitudes/1",
                             "protocol": "http",
                             "host": [
                                 "localhost"
@@ -394,7 +342,7 @@
                             }
                         ],
                         "url": {
-                            "raw": "http://localhost:3000/solicitudes/1",
+                            "raw": "http://localhost:4000/solicitudes/1",
                             "protocol": "http",
                             "host": [
                                 "localhost"

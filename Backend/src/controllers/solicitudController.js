@@ -26,7 +26,7 @@ exports.createSolicitud = async (req, res, next) => {
     try {
         const { codigo, descripcion, resumen, empleadoId } = req.body;
         const solicitud = await prismaClient.solicitud.create({
-            data: { codigo, descripcion, resumen, empleadoId },
+            data: { codigo, descripcion, resumen, empleadoId: parseInt(empleadoId) },
         });
         res.json(solicitud);
     } catch (error) {

@@ -5,12 +5,20 @@ const prismaClient = new prisma();
 const { generateToken } = require('../utils/jwtUtils');
 
 exports.register = async (req, res) => {
-    const { email, password, role } = req.body;
-    const hashedPassword = await bcrypt.hash(password, 10);
-    const user = await prismaClient.user.create({
-        data: { email, password: hashedPassword, role },
-    });
-    res.json(user);
+    try {
+        const { email, password, role } = req.body;
+        const hashedPassword = await bcrypt.hash(password, 10);
+        const user = await prismaClient.user.create({
+            data: { email, password: hashedPassword, role },
+        });
+        res.json(user);
+    } catch (error) {
+        if (error.code === 'P2002' && error.meta?.target?.includes('email')) {
+            res.status(400).json({ message: 'El correo electrónico ya está registrado' });
+        } else {
+            res.status(500).json({ message: 'Error al registrar el usuario' });
+        }
+    }
 };
 
 exports.login = async (req, res) => {
